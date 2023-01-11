@@ -1,27 +1,27 @@
 import java.util.*;
 
 class Solution{
-static void maxIndex(int N, int B)
+static void maxIndex(int n, int a)
 {
 int max_index = 0;
-for (int i = 1; i <= N; i++)
+for (int i = 1; i <= n; i++)
 {
 	max_index += i;
 }
 
 int current_index = max_index,
-					step = N;
+					step = n;
 
 while (true)
 {
-	while (current_index > 0 && N > 0)
+	while (current_index > 0 && n > 0)
 	{
-	current_index -= N;
-	if (current_index == B)
+	current_index -= n;
+	if (current_index == a)
 	{
-		current_index += N;
+		current_index += n;
 	}
-	N--;
+	n--;
 	}
 	if (current_index <= 0)
 	{
@@ -30,10 +30,10 @@ while (true)
 	}
 	else
 	{
-	N = step;
+	n = step;
 	current_index = max_index - 1;
 	max_index--;
-	if (current_index == B)
+	if (current_index == a)
 	{
 		current_index = max_index - 1;
 		max_index--;
